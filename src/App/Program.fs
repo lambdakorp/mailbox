@@ -1,13 +1,10 @@
-// Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
-
-open System
-
-// Define a function to construct a message to print
-let from whom =
-    sprintf "from %s" whom
+open Library.Actors
 
 [<EntryPoint>]
 let main argv =
-    let message = from "F#" // Call the function
-    printfn "Hello world %s" message
+    processor.Post (Increment 47)
+    processor.Post (Decrement 10)
+    processor.Post (Increment 2)
+    let state = processor.PostAndReply (fun reply -> Get reply)
+    printfn "State: %d" state
     0 // return an integer exit code
