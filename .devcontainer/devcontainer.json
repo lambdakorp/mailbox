@@ -1,0 +1,13 @@
+{
+    "name": "Development",
+    "dockerFile": "Dockerfile",
+    "appPort": [ 8080 ],
+    "remoteUser": "1000",
+    "extensions": [
+        "editorconfig.editorconfig",
+		"ionide.ionide-fsharp",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.csharp",
+        "msjsdiag.debugger-for-chrome"
+    ]
+}
